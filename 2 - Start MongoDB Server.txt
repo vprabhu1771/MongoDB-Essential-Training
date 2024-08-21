@@ -1,0 +1,25 @@
+Open Command Prompt
+
+type cd C:\Program Files\MongoDB\Server\5.0\bin
+
+
+
+type mongod
+
+
+
+Create Folder
+
+Under Local Disk 
+
+data -> db
+
+
+
+
+Open Another Command Prompt
+
+type cd C:\Program Files\MongoDB\Server\5.0\bin
+
+type mongo
+

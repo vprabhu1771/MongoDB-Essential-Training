@@ -1,0 +1,3 @@
+use school
+
+switched to db school

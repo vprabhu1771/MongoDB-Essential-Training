@@ -1,0 +1,3 @@
+db.books.insert({"name":"mongodb book"})
+
+WriteResult({"nInserted" : 1 }) 
