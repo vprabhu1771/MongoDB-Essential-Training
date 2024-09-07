@@ -1,4 +1,4 @@
-# Download and Install mongoDB
+# 2 - Download and Install MongoDB Shell (mongosh)
 
 ![Image](1.PNG)
 
@@ -37,3 +37,7 @@
 ![Image](18.PNG)
 
 ![Image](19.PNG)
+
+![Image](20.PNG)
+
+![Image](21.PNG)
