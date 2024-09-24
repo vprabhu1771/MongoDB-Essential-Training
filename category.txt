@@ -1,0 +1,7 @@
+db.category.insertOne({"name": "a"})
+
+db.category.insertOne({"name": "b"})
+
+db.category.insertOne({"name": "c"})
+
+db.category.insertOne({"name": "d"})
