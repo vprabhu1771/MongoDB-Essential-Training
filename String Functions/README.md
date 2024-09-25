@@ -36,7 +36,7 @@ MongoDB provides various string functions that you can use to manipulate and ana
 Combines multiple strings into one string.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -50,7 +50,7 @@ db.collection.aggregate([
 Extracts a substring from a string.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -64,7 +64,7 @@ db.collection.aggregate([
 Returns the length of a string.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -78,7 +78,7 @@ db.collection.aggregate([
 Converts a string to uppercase.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -92,7 +92,7 @@ db.collection.aggregate([
 Converts a string to lowercase.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -106,7 +106,7 @@ db.collection.aggregate([
 Removes whitespace from both ends of a string.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -120,7 +120,7 @@ db.collection.aggregate([
 Splits a string into an array of substrings based on a specified delimiter.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -134,7 +134,7 @@ db.collection.aggregate([
 Replaces the first occurrence of a substring with a new substring.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -148,7 +148,7 @@ db.collection.aggregate([
 Replaces all occurrences of a substring with a new substring.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -162,7 +162,7 @@ db.collection.aggregate([
 Returns the index of the first occurrence of a substring in a string (byte-based or code point-based).
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
@@ -176,7 +176,7 @@ db.collection.aggregate([
 Matches a string against a regular expression.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $match: {
@@ -190,7 +190,7 @@ db.collection.aggregate([
 Converts a value to a string type, which can be useful in certain contexts.
 
 **Example:**
-```json
+```
 db.collection.aggregate([
   {
     $project: {
