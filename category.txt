@@ -5,3 +5,11 @@ db.category.insertOne({"name": "b"})
 db.category.insertOne({"name": "c"})
 
 db.category.insertOne({"name": "d"})
+
+OR
+db.category.insertMany([
+  {"name": "a"},
+  {"name": "b"},
+  {"name": "c"},
+  {"name": "d"}
+])
