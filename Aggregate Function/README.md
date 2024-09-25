@@ -182,7 +182,7 @@ This query will calculate the maximum value of the `total_fees` field and return
 
 In this example, the query returns the highest `total_fees` value from all student records.
 
-6 - MAX Function 
+6 - MIN Function 
 
 To find the minimum value of a field using the MongoDB aggregation framework, you can use the `$min` operator. Here's an example to find the minimum `total_fees` among the students in the `students` collection:
 
