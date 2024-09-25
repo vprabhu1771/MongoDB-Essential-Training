@@ -13,3 +13,21 @@ db.category.insertMany([
   {"name": "c"},
   {"name": "d"}
 ])
+
+OR
+db.country.insertOne({
+  "name": "india",
+  "code": "IND",
+  "state": [
+    "Tamil Nadu",
+    "Kerala",
+    "Karnataka",
+    {
+      "city": [
+        "Cuddalore",
+        "Chennai",
+        "Villupuram"
+      ]
+    }
+  ]
+})
