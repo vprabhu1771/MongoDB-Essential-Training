@@ -210,4 +210,109 @@ This query will calculate the minimum value of the `total_fees` field and return
 
 In this example, the query returns the lowest `total_fees` value from all student records.
 
+
+7 - Count By Gender Wise
+
+To get the count of students by gender (e.g., how many are male and how many are female) using MongoDB's aggregation framework, you can use the `$group` stage to group the data by `gender` and then use the `$count` operator. Here's an example:
+
+```js
+db.students.aggregate([
+  {
+    $group: {
+      _id: "$gender", // Group by gender
+      count: { $sum: 1 } // Count the number of documents per gender
+    }
+  }
+])
+```
+
+This will give you the count of students grouped by their gender:
+
+```json
+[
+  {
+    "_id": "M",
+    "count": 3
+  },
+  {
+    "_id": "F",
+    "count": 2
+  }
+]
+```
+
+In this example, the query counts how many male (`"M"`) and female (`"F"`) students are in the `students` collection.
+
+8 - count of male students studying each course
+
+To get the count of male students studying each course, you can use MongoDB's aggregation framework. You can group by both `gender` and `course` and then count the number of students in each course for males (`"M"`).
+
+Here's the query to achieve that:
+
+```js
+db.students.aggregate([
+  {
+    $match: { gender: "M" } // Filter to only include male students
+  },
+  {
+    $group: {
+      _id: "$course", // Group by course
+      male_student_count: { $sum: 1 } // Count the number of male students in each course
+    }
+  }
+])
+```
+
+This will give you the count of male students for each course:
+
+```json
+[
+  {
+    "_id": "PYTHON",
+    "male_student_count": 2
+  },
+  {
+    "_id": "JAVA",
+    "male_student_count": 1
+  }
+]
+```
+
+In this example, the query filters for male students (`"M"`) and then groups them by course to get the count of male students per course.
+
+9 - count of female students studying each course
+
+To get the count of female students studying each course, you can use a similar approach to the previous query, but this time you will filter for female students (`"F"`). Here’s how to do it using MongoDB's aggregation framework:
+
+```js
+db.students.aggregate([
+  {
+    $match: { gender: "F" } // Filter to only include female students
+  },
+  {
+    $group: {
+      _id: "$course", // Group by course
+      female_student_count: { $sum: 1 } // Count the number of female students in each course
+    }
+  }
+])
+```
+
+This will give you the count of female students for each course:
+
+```json
+[
+  {
+    "_id": "C",
+    "female_student_count": 1
+  },
+  {
+    "_id": "C++",
+    "female_student_count": 1
+  }
+]
+```
+
+In this example, the query filters for female students (`"F"`) and then groups them by course to get the count of female students per course.
+
 { name: "a" }
