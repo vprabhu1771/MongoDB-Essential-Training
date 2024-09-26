@@ -1,0 +1,60 @@
+The `bulkWrite` method in MongoDB expects an array of operations (like inserts, updates, deletes, etc.), and each operation needs to be specified in a proper format. Here's an example of how you would use `bulkWrite` to perform different operations, including inserting, updating, and deleting documents:
+
+### Example with `bulkWrite`:
+
+```javascript
+db.students.bulkWrite([
+    {
+        insertOne: {
+            "document": {
+                name: "John Doe",
+                age: 12,
+                grade: "7th",
+                address: { city: "New York", state: "NY" },
+                subjects: ["Math", "Science"]
+            }
+        }
+    },
+    {
+        updateOne: {
+            filter: { name: "Jane Smith" },
+            update: { $set: { age: 14, grade: "9th" } }
+        }
+    },
+    {
+        deleteOne: {
+            filter: { name: "Alex Johnson" }
+        }
+    },
+    {
+        insertOne: {
+            "document": {
+                name: "Emily Davis",
+                age: 14,
+                grade: "9th",
+                address: { city: "Miami", state: "FL" },
+                subjects: ["Math", "Art"]
+            }
+        }
+    },
+    {
+        updateMany: {
+            filter: { age: { $lt: 13 } },
+            update: { $set: { grade: "8th" } }
+        }
+    }
+]);
+```
+
+### Explanation:
+1. **Insert Operations** (`insertOne`):
+   - Inserts new student documents like `John Doe` and `Emily Davis`.
+   
+2. **Update Operations** (`updateOne`, `updateMany`):
+   - Updates `Jane Smith`'s age and grade.
+   - Updates all students under 13 years of age to set their grade to "8th."
+
+3. **Delete Operation** (`deleteOne`):
+   - Deletes a student record for `Alex Johnson`.
+
+This shows how to perform multiple types of operations using `bulkWrite`. Each operation must be an object within the array.
