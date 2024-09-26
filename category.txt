@@ -7,6 +7,7 @@ db.category.insertOne({"name": "c"})
 db.category.insertOne({"name": "d"})
 
 OR
+
 db.category.insertMany([
   {"name": "a"},
   {"name": "b"},
@@ -15,6 +16,7 @@ db.category.insertMany([
 ])
 
 OR
+
 db.country.insertOne({
   "name": "india",
   "code": "IND",
