@@ -64,7 +64,9 @@ const PaymentCalculator = () => {
 
       {charge !== null && (
         <div style={{ marginTop: '20px' }}>
+        <h2>amount : ₹{amount}</h2>
           <h2>Payment Charge: ₹{charge}</h2>
+          <h2>total: ₹{amount-charge}</h2>
         </div>
       )}
     </div>
