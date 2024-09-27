@@ -20,11 +20,16 @@ To implement the flow you're asking for, where a mobile number is collected and 
 
 First, you'll need to implement the popup to collect the mobile number and make an API request to the backend. Here's how:
 
+### `.env`
+```
+VITE_API_BASE_URL="http://192.168.1.111:3000/api"
+```
+
 #### `App.jsx`
 
 ```jsx
 import React, { useState } from 'react';
-import PaymentCalculator from './PaymentCalculator';
+import PaymentCalculator from './components/PaymentCalculator';
 
 const App = () => {
   const [mobileNumber, setMobileNumber] = useState('');
@@ -37,7 +42,7 @@ const App = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/mobile', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/mobile`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,6 +53,8 @@ const App = () => {
       if (response.ok) {
         setIsSubmitted(true); // Show PaymentCalculator after submission
       } else {
+        console.log(import.meta.env.VITE_API_BASE_URL);
+        
         alert('Failed to save mobile number');
       }
     } catch (error) {
